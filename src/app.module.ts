@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { CqrsModule } from '@nestjs/cqrs';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
 import { CreateTokenCommandHandler } from './application/commands/create-token.command';
+import { FindCardByTokenQueryHandler } from './application/queries/find-card-by-token.query';
 import { CardInfrastructure } from './infrastructure/card.infrastructure';
 import { CardSchema } from './infrastructure/entities/card.entity';
 import { CardController } from './interfaces/http/card.controller';
@@ -11,7 +11,7 @@ import { HealthController } from  './interfaces/http/health.controller';
 
 
 const controllers = [HealthController, CardController];
-const application = [CreateTokenCommandHandler]
+const application = [CreateTokenCommandHandler, FindCardByTokenQueryHandler]
 const infrastructure = [CardInfrastructure];
 @Module({
   imports: [

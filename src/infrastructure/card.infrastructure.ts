@@ -13,8 +13,12 @@ export class CardInfrastructure implements CardRepository {
 
     async save(card: Card): Promise<Card> {
         const cardEntity = CardDto.fromDomainToEntity(card);
-        console.log('cardEntity', cardEntity)
         const savedCard = await this.cardModel.create(cardEntity);
         return CardDto.fromEntityToDomain(savedCard);
+    }
+
+    async findByToken(token: string): Promise<Card> {
+        const card = await this.cardModel.findOne({token});
+        return CardDto.fromEntityToDomain(card);
     }
 }
