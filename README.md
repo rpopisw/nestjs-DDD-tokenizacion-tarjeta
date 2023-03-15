@@ -25,6 +25,7 @@ Además, este proyecto utiliza contenedores Docker para la fácil implementació
 
 ## Estructura de Codigo 
 
+![Screen Shot 2023-03-13 at 17 03 16](https://user-images.githubusercontent.com/69777661/224842214-7906a1a0-7de1-4848-886b-7e50f733efe0.png)
 
 
 ## Installation
