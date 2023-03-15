@@ -24,7 +24,6 @@ export class FindCardByTokenQueryHandler implements IQueryHandler<FindCardByToke
         if (tokenResult.isErr()) {
             throw new BadRequestException(tokenResult.error.message, tokenResult.error.name);
         }
-
         const card = await this.repository.findByToken(token);
         return CardResponse.fromDomainToResponse(card);
     }
